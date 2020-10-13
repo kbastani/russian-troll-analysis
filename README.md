@@ -4,7 +4,9 @@ This repository contains a recipe for bootstrapping a project that does time ser
 
 #### Warning!
 
-This dataset contains some of the most offensive and toxic text I've ever seen. The tweets contained within the original dataset attempted to hide or obscure the ideological contagion that the trolls attempted to bleed into mainstream news. The text contained within will elicit an emotional response, as it was designed to do, and as such, I do not recommend exposing the raw text to any reader without providing this warning.
+This dataset contains some of the most offensive and toxic text I've ever seen. The tweets contained within the original dataset attempted to hide or obscure the ideological nature of text that the trolls intended to bleed into mainstream media.
+
+The raw text of tweets contained within the dataset will elicit an emotional response, as it was designed to do, and as such, I do not recommend exposing the raw text to any reader without providing this warning.
 
 ## Usage
 
