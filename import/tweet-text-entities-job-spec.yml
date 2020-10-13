@@ -1,0 +1,25 @@
+executionFrameworkSpec:
+  name: 'standalone'
+  segmentGenerationJobRunnerClassName: 'org.apache.pinot.plugin.ingestion.batch.standalone.SegmentGenerationJobRunner'
+  segmentTarPushJobRunnerClassName: 'org.apache.pinot.plugin.ingestion.batch.standalone.SegmentTarPushJobRunner'
+  segmentUriPushJobRunnerClassName: 'org.apache.pinot.plugin.ingestion.batch.standalone.SegmentUriPushJobRunner'
+jobType: SegmentCreationAndTarPush
+inputDirURI: '/opt/pinot/import/rawdata/'
+includeFileNamePattern: 'glob:**/NER_*__*.csv'
+outputDirURI: '/tmp/tweet-text-entities-4/segments/'
+overwriteOutput: true
+pinotFSSpecs:
+  - scheme: file
+    className: org.apache.pinot.spi.filesystem.LocalPinotFS
+recordReaderSpec:
+  dataFormat: 'csv'
+  className: 'org.apache.pinot.plugin.inputformat.csv.CSVRecordReader'
+  configClassName: 'org.apache.pinot.plugin.inputformat.csv.CSVRecordReaderConfig'
+  configs:
+    multiValueDelimiter: ''
+tableSpec:
+  tableName: 'tweetTextEntities'
+  schemaURI: 'http://localhost:9000/tables/tweetTextEntities/schema'
+  tableConfigURI: 'http://localhost:9000/tables/tweetTextEntities'
+pinotClusterSpecs:
+  - controllerURI: 'http://localhost:9000'

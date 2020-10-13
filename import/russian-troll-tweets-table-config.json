@@ -1,0 +1,52 @@
+{
+   "tableName":"russianTrollTweets",
+   "segmentsConfig":{
+      "segmentAssignmentStrategy":"BalanceNumSegmentAssignmentStrategy",
+      "segmentPushType":"APPEND",
+      "schemaName":"russianTrollTweets",
+      "replication":1
+   },
+   "fieldConfigList":[
+      {
+         "name":"content",
+         "encodingType":"RAW",
+         "indexType":"TEXT"
+      },
+      {
+         "name":"article_url",
+         "encodingType":"RAW",
+         "indexType":"TEXT"
+      },
+      {
+         "name":"tco1_step1",
+         "encodingType":"RAW",
+         "indexType":"TEXT"
+      }
+   ],
+   "tableIndexConfig":{
+      "noDictionaryColumns":[
+         "content",
+         "article_url",
+         "tco1_step1"
+      ],
+      "loadMode":"MMAP"
+   },
+   "tenants":{
+      "broker":"DefaultTenant",
+      "server":"DefaultTenant"
+   },
+   "tableType":"OFFLINE",
+   "metadata":{
+      "customConfigs":{
+
+      }
+   },
+   "ingestionConfig":{
+      "transformConfigs":[
+         {
+            "columnName":"epoch_timestamp",
+            "transformFunction":"fromDateTime(publish_date, 'MM/dd/yyyy HH:mm')"
+         }
+      ]
+   }
+}
