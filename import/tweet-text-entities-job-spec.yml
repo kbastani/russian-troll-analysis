@@ -5,8 +5,8 @@ executionFrameworkSpec:
   segmentUriPushJobRunnerClassName: 'org.apache.pinot.plugin.ingestion.batch.standalone.SegmentUriPushJobRunner'
 jobType: SegmentCreationAndTarPush
 inputDirURI: '/opt/pinot/import/rawdata/'
-includeFileNamePattern: 'glob:**/NER_*__*.csv'
-outputDirURI: '/tmp/tweet-text-entities-4/segments/'
+includeFileNamePattern: 'glob:**/NER_*.csv'
+outputDirURI: '/tmp/tweet-text-entities/segments/'
 overwriteOutput: true
 pinotFSSpecs:
   - scheme: file

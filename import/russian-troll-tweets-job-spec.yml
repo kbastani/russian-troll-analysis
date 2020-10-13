@@ -5,7 +5,7 @@ executionFrameworkSpec:
   segmentUriPushJobRunnerClassName: 'org.apache.pinot.plugin.ingestion.batch.standalone.SegmentUriPushJobRunner'
 jobType: SegmentCreationAndTarPush
 inputDirURI: '/opt/pinot/import/rawdata/'
-includeFileNamePattern: 'glob:**/*.csv'
+includeFileNamePattern: 'glob:**/IRA*.csv'
 outputDirURI: '/tmp/pinot-storm-analytics/segments/'
 overwriteOutput: true
 pinotFSSpecs:

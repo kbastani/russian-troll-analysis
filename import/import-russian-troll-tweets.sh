@@ -6,10 +6,6 @@ echo "Adding 'russianTrollTweets' table to Pinot..."
 /opt/pinot/bin/pinot-admin.sh AddTable -tableConfigFile /opt/pinot/import/russian-troll-tweets-table-config.json -schemaFile /opt/pinot/import/russian-troll-tweets-schema.json -exec
 /opt/pinot/bin/pinot-admin.sh AddTable -tableConfigFile /opt/pinot/import/tweet-text-entities-table-config.json -schemaFile /opt/pinot/import/tweet-text-entities-schema.json -exec
 
-echo "Downloading CSV files from GitHub..."
-
-git clone https://github.com/kbastani/russian-troll-tweets.git
-
 FILES=./russian-troll-tweets/*.csv
 
 # Move downloaded CSV files to subdirectory
